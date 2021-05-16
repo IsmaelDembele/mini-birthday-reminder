@@ -1,12 +1,12 @@
 import React from 'react';
 import Item from './Item';
-import { listBirthday } from '../miscellaneous';
+import { listBirthday, age } from '../miscellaneous';
 
 
 const BirthdayPeople = () => {
     return <ul>
-        <h2>20 birthdays today</h2><br />
-        {listBirthday.map(person => (<Item data={person} />))}
+        <h2>{listBirthday.length > 1 ? `${listBirthday.length} birthdays today` : `${listBirthday.length} birthday today`} </h2><br />
+        {listBirthday.map((person, index) => (<Item key={index} data={person} age={age} />))}
 
     </ul>
 }
