@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="list-people">
+      <BirthdayPeople />
     </div>
-  );
+  )
 }
 
-export default App;
+const BirthdayPeople = () => {
+  return <ul>
+  <h2>20 birthdays today</h2><br/>
+    <li><img className="image" src="https://mobirise.com/bootstrap-template/profile-template/assets/images/timothy-paul-smith-256424-1200x800.jpg" alt="person1" />
+      <div className="li__text">
+        <h3>name</h3>
+        <p>birthdate</p>
+      </div>
+    </li>
+
+  </ul>
+}
+
+export default App
+
