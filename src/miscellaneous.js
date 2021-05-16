@@ -1,4 +1,5 @@
-import { data } from './data';
+import { contacts } from './contacts';
+
 
 const birthday = (dob) => {
     const date = new Date();
@@ -7,16 +8,17 @@ const birthday = (dob) => {
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    const today = `${year}/${month + 1}/${day}`;
+    const today = `${month + 1}/${day}`;
+    const minusYear = 5;// to remove '2021/'
 
-    console.log(dob);
-    console.log(today);
+    // console.log(dob);
+    // console.log(today);
 
-    if (dob === today)
+    if (dob.slice(minusYear) === today)
         return true;
     else
         return false;
 };
 
 
-export const listBirthday = data.filter(person => birthday(person.dob));;
+export const listBirthday = contacts.filter(person => birthday(person.dob));
